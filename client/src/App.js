@@ -5,8 +5,12 @@ import Signup from './pages/Signup';
 import Login from './pages/Login';
 import NoMatch from './pages/NoMatch';
 import Navbar from './components/Navbar';
-import { CounterProvider } from './context';
+import Details from './components/Details';
+import Cart from './components/Cart';
+import ProductList from './components/ProductList';
 
+
+import { CounterProvider } from './context';
 const initialState = { currentUser: {} };
 const UserContext = React.createContext(initialState);
 

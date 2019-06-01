@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": null,
-    "database": "blogger",
+    "password": "UCdavisboot",
+    "database": "localmarket",
     "host": "127.0.0.1",
     "port": 3306,
     "dialect": "mysql"
