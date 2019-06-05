@@ -1,5 +1,5 @@
-var db = require('../models');
-var jwt = require('jsonwebtoken');
+const db = require('../models');
+const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
 
@@ -44,4 +44,15 @@ module.exports = {
       });
     });
   },
+  create: function(req, res) {
+    const { username, password } = req.body;
+    console.log(req.body);
+    bcrypt.hash(password, 10, function(err, hash) {
+      const user = {
+        username,
+        password: hash
+      };
+      db.User.create(user).then(dbModel => res.json(dbModel));
+    });
+  }
 };
