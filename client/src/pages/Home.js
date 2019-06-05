@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import API from '../utils/API';
 // import { Link } from 'react-router-dom';
 import RandomHomeComponent from '../components/RandomHomeComponent';
-
+// import Navbar from '../components/Navbar';
 class Home extends Component {
   state = {
     posts: [],
@@ -48,6 +48,7 @@ class Home extends Component {
     return (
       <div>
         {JSON.stringify(this.state.posts)}
+        {/* <Navbar/> */}
         <RandomHomeComponent />
         <div>
           <input
