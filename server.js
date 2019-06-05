@@ -5,14 +5,14 @@
 // ******************************************************************************
 // *** Dependencies
 // =============================================================
-var express = require('express');
-const mongoose = require("mongoose");
+const express = require('express');
+const mongoose = require('mongoose');
 const routes = require('./routes');
 
 // Sets up the Express App
 // =============================================================
 var app = express();
-var PORT = process.env.PORT || 3000;
+var PORT = process.env.PORT || 3001;
 
 // Requiring our models for syncing
 var db = require('./models');

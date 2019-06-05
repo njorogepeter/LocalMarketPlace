@@ -12,7 +12,7 @@ const Navbar = () => {
     <NavWrapper className="navbar navbar-expand-sm navbar-dark px-sm-5">
         <img src={logo} alt="store" className="Navbar-brand" /> 
           <Link to="/signup">Sign Up</Link>
-          <Link to="/login">Login</Link>This is your new navbar{' '}
+          <Link to="/login">Login</Link>This is your new{' '}
       <Link to="/cart" className="ml-auto">
         <ButtonContainer>
           <i className="fas fa-cart-plus" />

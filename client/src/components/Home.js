@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import API from '../utils/API';
 // import { Link } from 'react-router-dom';
-import RandomHomeComponent from '../components/RandomHomeComponent';
+// import RandomHomeComponent from '../components/RandomHomeComponent';
 // import Navbar from '../components/Navbar';
 class Home extends Component {
   state = {
@@ -47,7 +47,7 @@ class Home extends Component {
   render() {
     return (
       <div>
-        {/* {JSON.stringify(this.state.posts)} */}
+        {JSON.stringify(this.state.posts)}
         {/* <Navbar/> */}
         {/* <RandomHomeComponent /> */}
         <div>
