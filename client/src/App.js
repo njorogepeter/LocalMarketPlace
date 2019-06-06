@@ -11,14 +11,17 @@ import Cart from './components/Cart';
 import ProductList from './components/ProductList';
 
 
-import { CounterProvider } from './context';
+
+import { CounterProvider, ProductProvider } from './context';
 const initialState = { currentUser: {} };
 const UserContext = React.createContext(initialState);
 
 function App() {
   return (
-    <Router>
+    
       <CounterProvider>
+        <ProductProvider>
+        <Router>
         <div>
           <Navbar />
           <Switch>
@@ -31,8 +34,9 @@ function App() {
             <Route component={NoMatch} />
           </Switch>
         </div>
-      </CounterProvider>
-    </Router>
+      </Router>
+      </ProductProvider>
+    </CounterProvider>
   );
 }
 

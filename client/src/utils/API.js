@@ -1,12 +1,18 @@
 import axios from 'axios';
 
 export default {
-  // Gets all posts
+  // Gets all produce
   getPosts: function() {
-    return axios.get('/api/posts');
+    return axios.get('/api/produce');
   },
   createPost: function(data) {
-    return axios.post('/api/posts', data);
+    return axios.post('/api/produce', data);
+  },
+  deletePost: function(id){
+    return axios.delete('api/produce/' + id);
+  },
+  savePost: function(produceData) {
+    return axios.post("/api/produce", produceData);
   },
   signup: function(data) {
     return axios.post('/api/users/signup', data);
@@ -17,9 +23,9 @@ export default {
   validateToken: function(t) {
     return axios.post('/api/users/validate', { token: t });
   },
-  // // Gets the book with the given id
-  // getBook: function(id) {
-  //   return axios.get("/api/books/" + id);
+  // // Gets the produce with the given id
+  // getPosts: function(id) {
+  //   return axios.get("/api/produce/" + id);
   // },
   // // Deletes the book with the given id
   // deleteBook: function(id) {

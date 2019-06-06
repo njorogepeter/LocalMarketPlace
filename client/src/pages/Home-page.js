@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import Title from '../components/Title';
 
-import API from '../utils/API';
-// import { Link } from 'react-router-dom';
+import API from '../utils/API-1';
 // import RandomHomeComponent from '../components/RandomHomeComponent';
-// import Navbar from '../components/Navbar';
 class Home extends Component {
   state = {
     posts: [],
@@ -47,9 +46,9 @@ class Home extends Component {
   render() {
     return (
       <div>
-        {JSON.stringify(this.state.posts)}
-        {/* <Navbar/> */}
+        {/* {JSON.stringify(this.state.posts)} */}
         {/* <RandomHomeComponent /> */}
+        <Title name="Our" title="produce" />
         <div>
           <input
             type="text"
