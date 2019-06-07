@@ -9,6 +9,7 @@ import Navbar from './components/Navbar';
 import Details from './components/Details';
 import Cart from './components/Cart';
 import ProductList from './components/ProductList';
+import './App.css';
 
 
 

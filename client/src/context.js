@@ -3,30 +3,40 @@ import API from './utils/API';
 
 // import React, { Component } from 'react'
 
-const ProductContext = React.createContext();
+const ProductContext = React.createContext({
+  produces: []
+});
 
 class ProductProvider extends Component {
   state = {
-    product_list: []
+    produces: [],
+    item: '',
+    description: '',
+    price: '',
+    quantity: '',
+
   };
-componentDidMount() {
-  this.loadProduces();
+  componentDidMount() {
+    this.getAllProduces();
 }
 
-loadProduces = () => {
-  API.getPosts()
-      .then(res =>
-          this.setState({ produce: res.data, item: "", description: "", 
-              price: "", quantity: ""})
-              )
-              .catch(err => console.log(err));
-};
+getAllProduces() {
+    API.getPosts()
+      .then(res => this.setState({ produces: res.data, item: '',
+      description: '', price: '', quantity: '', }));
+}
+
+deletePost(id) {
+    API.deletePost(id).then(res =>
+        this.setState({ produces: this.state.produces.filter(b => b._id !== id) })
+    );
+}
   render() {
     return (
       <ProductContext.Provider 
       value={{
         ...this.state,
-        addToCart: this.addToCart
+        addToCart:this.addToCart
       }}>
         {this.props.children}
       </ProductContext.Provider>

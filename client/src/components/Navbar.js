@@ -10,9 +10,18 @@ const Navbar = () => {
   return (
     <div>
     <NavWrapper className="navbar navbar-expand-sm navbar-dark px-sm-5">
+    <Link to="/">
         <img src={logo} alt="store" className="Navbar-brand" /> 
-          <Link to="/signup">Sign Up</Link>
-          <Link to="/login">Login</Link>This is your new{' '}
+        </Link>
+        <ul className="navbar-nav align-items-center">
+          <li className="nav-item ml-3">
+          <Link to="/signup">Sign Up</Link> 
+          </li>
+          <li className="nav-item ml-3">
+          <Link to="/login">Login</Link>
+          </li>
+      </ul>
+
       <Link to="/cart" className="ml-auto">
         <ButtonContainer>
           <i className="fas fa-cart-plus" />

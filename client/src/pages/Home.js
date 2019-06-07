@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
 import Jumbotron from '../components/Jumbotron';
+import Header from '../components/Header/Header';
 import DeleteBtn from '../components/DeleteBtn';
 import { Col, Row, Container } from '../components/Grid';
 import { List, ListItem } from '../components/List';
 import { Input, TextArea, FormBtn } from '../components/Form';
 import API from '../utils/API';
+import {ProductConsumer} from '../context';
+import styled from 'styled-components';
+
 
 class Produces extends Component {
-  // Initialize this.state.books as an empty array
+  // Initialize this.state.produce as an empty array
   state = {
     produces: [],
     item: '',
@@ -65,15 +69,20 @@ class Produces extends Component {
 
 
   render() {
-    console.log(this.state.data);
+    // console.log(this.state.data);
     return (
       <Container fluid>
-        <Row>
-          <Col size="md-6">
-            <Jumbotron>
+        <div className="row">
+          <div className="col .mx-0">
+            <Header>
               <h1>Add Items</h1>
-            </Jumbotron>
-            <div>
+            </Header>
+            </div>
+            </div>
+            <Row className="justify-content-center">
+              <div className="col-8 mx-auto">
+            <Wrapper>
+            {/* <div> */}
               <Input
                 value={this.state.item}
                 name="item"
@@ -98,29 +107,29 @@ class Produces extends Component {
                 placeholder="Quantity (required)"
                 onChange={e => this.onChangeQuantity(e)}
               />
-              {/* <TextArea
-                name="price"
-                value={this.state.price}
-                placeholder="Price (Optional)"
-                onChange={e => this.onChangePrice(e)}
-              /> */}
               <FormBtn onClick={() => this.savePost()}>Submit Produce</FormBtn>
+            </Wrapper>
             </div>
-          </Col>
-          <Col size="md-6 sm-12">
+          </Row>
+          <Row>
+          <div className="col-12">
             <Jumbotron>
               <h1>For Sale</h1>
             </Jumbotron>
+            </div>
+            </Row>
+            <Row>
+            <div className="col-8 mx-auto">
             {this.state.produces.length ? (
               <List>
                 {this.state.produces.map(produce => (
                   <ListItem key={produce._id}>
                     <a href={'/produces/' + produce._id}>
                       <strong>
-                        {produce.item}
-                        {produce.description}
-                        {produce.price} 
-                        {produce.quantity}
+                        {produce.item}{" "}
+                        {produce.description}{" "}
+                        {"$"}{produce.price} {" "}
+                        {"Qt."}{produce.quantity}
 
                       </strong>
                     </a>
@@ -131,11 +140,18 @@ class Produces extends Component {
             ) : (
               <h3>No Results to Display</h3>
             )}
-          </Col>
-        </Row>
+            </div>
+          </Row>
+
       </Container>
     );
   }
 }
+
+const Wrapper = styled.div`
+  padding-top: 20px;
+  
+
+`;
 
 export default Produces;
